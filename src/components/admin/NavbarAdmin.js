@@ -13,17 +13,15 @@ export function NavbarAdmin() {
                 <NavbarBS.Brand href="#home">CM-Kuráž</NavbarBS.Brand>
                 <NavbarBS.Toggle aria-controls="responsive-navbar-nav" />
                 <NavbarBS.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="me-auto">
                     <Nav.Link href="#1">Kalendář akcí</Nav.Link>
                     <Nav.Link href="#2">Úprava stránky</Nav.Link>
                     <Nav.Link href="#3">Oznámení</Nav.Link>
-                </Nav>
-                </NavbarBS.Collapse>
-                <Nav className="ml-auto">
 
+                </Nav>
                 <Button variant="outline-success" block="true" onClick={() => {logOut()
                     window.location.href="/"}}>Odhlásit se</Button>
-                </Nav>
+                </NavbarBS.Collapse>
             </Container>
     </NavbarBS>
         </>)

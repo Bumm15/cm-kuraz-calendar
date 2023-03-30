@@ -1,39 +1,40 @@
 import { Carousel, Container, Col, Row } from "react-bootstrap";
-import { Calender } from "../pages/Calender";
 import { UserNavbar } from "./UserNavbar";
+import "../styles/home.css"
 
 
 export function UserPanel() {
     return (
         <>
         <UserNavbar />
-        <Container variant="dark">
+        <Container>
+            <aside>
+                
             <Row>
-                <Col className="col-5">
-                    <Carousel variant="dark">
+            
+                <Col xs={12} md={6} className="order-md-1 order-2"> 
+                    <Carousel variant="light">
                         <Carousel.Item>
-                            <img className="d-block w-100" src="logo192.png" />
+                            <img className="d-block w-100" src="photo1.jpeg" />
                         </Carousel.Item>
                         <Carousel.Item>
-                            <img className="d-block w-100" src="logo192.png" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img className="d-block w-100" src="logo192.png" />
+                            <img className="d-block w-100" src="photo2.jpeg" />
                         </Carousel.Item>
                     </Carousel>
                 </Col>
-                <Col className="col-5">
+                <Col xs={12} md={6} className="order-md-2 order-1">
                     <h3 id="about">O nás</h3>
-                    <p>jooooooooooooooooooooooooooooooooooooo
-                        oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                        ooooooooooooooooooooooooooooooooooooooooooo
-                        ooooooooooooooooooooooooo
-                        ooooooooooooooooooooooooooooooooooooooooo</p>
+                    <p>ahoj aho jahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj ahoj </p>
                 </Col>
             </Row>
+            </aside>
+            <aside>
             <Row>
-                <h3>Přijďte si nás poslechnout</h3>
+                <div>
+                    <h3>Přijďte si nás poslechnout</h3>
+                </div>
             </Row>
+            </aside>
         </Container>
         </>
     )

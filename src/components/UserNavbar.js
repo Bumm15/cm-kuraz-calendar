@@ -2,8 +2,7 @@ import { Navbar as NavbarBS, Nav, Button, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/authContext"
 
 export function UserNavbar() {
-    const { user, logOut } = useAuth
-    console.log(user)
+    const { user, logOut } = useAuth()
     return (
         <>
         <NavbarBS collapseOnSelect expand="sm" bg="light" variant="light">
@@ -13,22 +12,20 @@ export function UserNavbar() {
                 <NavbarBS.Brand href="/">CM-Kuráž</NavbarBS.Brand>
                 <NavbarBS.Toggle aria-controls="responsive-navbar-nav" />
                 <NavbarBS.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
+                <Nav className="me-auto">
                     <Nav.Link href="/#about">O nás</Nav.Link>
                     <Nav.Link href="/#calender">Kalendář akcí</Nav.Link>
                     <Nav.Link href="/#kontakt">Kontakt</Nav.Link>
                 </Nav>
-                </NavbarBS.Collapse>
-                <Nav className="ml-auto">
                 {user ?
-                    <Button variant="outline-success" block="true" onClick={() => {logOut()
+                    <Button variant="outline-success" className="mr-2" block="true" onClick={() => {logOut()
                         window.location.href="/"}}>Odhlásit se</Button>
                         :
-                        <Button variant="outline-success" block="true" onClick={() => {
+                        <Button variant="outline-success" className="mr-2" block="true" onClick={() => {
                             window.location.href = "/login"
                         }}>Přihlásit se</Button>
-                    }
-                </Nav>
+                    }   
+                </NavbarBS.Collapse>
                 </Container>
                 
     </NavbarBS>
