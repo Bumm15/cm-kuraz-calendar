@@ -1,0 +1,53 @@
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #777e8e;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+.event {
+    position: relative;
+    padding: .5rem .5rem;
+}
+
+.event:hover {
+    background-color:  rgb(225, 234, 238);
+}
+
+.buttons {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .button2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+.event:hover .buttons {
+    opacity: 1;
+}
+
+.event:hover .button1 {
+    transform: translateY(0px);
+    transform: translateX(-100%);
+}
+  
+.event:hover .button2 {
+    transform: translateY(2.5rem);
+}
