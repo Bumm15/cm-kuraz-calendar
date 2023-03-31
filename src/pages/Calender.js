@@ -4,7 +4,6 @@ import { Alert, Button, Col, Form, Modal, Row, Stack } from "react-bootstrap";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css"
 import "../styles/event-dot.css"
-import _ from "lodash";
 
 import { useDB } from "../contexts/firebaseContext";
 
@@ -70,9 +69,6 @@ export function Calender() {
         setObjName(name)
         setID(id)
     }
-    const handleRemoveHide = () => {
-        setShowRemove(false)
-    }
 
 
     const handleSubmit = async (e) => {
@@ -98,6 +94,7 @@ export function Calender() {
 
     return (
     <>
+    {error && <Alert variant="danger">{error}</Alert>}
     <RemoveEventModal name={objName} id={ID} callback={removeEventByID} show={showRemove} showCallback={() => setShowRemove(!showRemove)}/>
     {success && <Alert variant="success">Akce byla úspěšně přidána!</Alert>}
     <Row className="justify-content-md-center">
@@ -123,10 +120,10 @@ export function Calender() {
                     <span className="text-muted">{event.date}</span>
                     <p><b>místo:</b> {event.place} <br /><b>čas:</b> {event.time}</p>
                     <div className="buttons">
-                        <Button onClick={() => handleRemoveShow(event.name, event.id)} className="button1 btn-sm" variant="danger"><img style={{ width: "1rem", height: "1rem" }} src={Bin} /></Button>
+                        <Button onClick={() => handleRemoveShow(event.name, event.id)} className="button1 btn-sm" variant="danger"><img alt="removeBtn" style={{ width: "1rem", height: "1rem" }} src={Bin} /></Button>
                         <Button
                             onClick={() => setEdit(!edit)} 
-                            className="button2 btn-sm btn-outline-secondary"><img style={{ width: "1rem", height: "1rem" }} src={Pen} /></Button>
+                            className="button2 btn-sm btn-outline-secondary"><img alt="editBtn" style={{ width: "1rem", height: "1rem" }} src={Pen} /></Button>
                     </div>
                 </div>
             ))

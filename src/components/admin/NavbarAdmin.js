@@ -14,9 +14,10 @@ export function NavbarAdmin() {
                 <NavbarBS.Toggle aria-controls="responsive-navbar-nav" />
                 <NavbarBS.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#1">Kalendář akcí</Nav.Link>
+                    <Nav.Link href="/">Kalendář akcí</Nav.Link>
                     <Nav.Link href="#2">Úprava stránky</Nav.Link>
                     <Nav.Link href="#3">Oznámení</Nav.Link>
+                    <Nav.Link href="/notes">Noty</Nav.Link>
 
                 </Nav>
                 <Button variant="outline-success" block="true" onClick={() => {logOut()

@@ -8,6 +8,7 @@ import { SignIn } from "./pages/SignIn";
 import { Home } from "./pages/Home";
 import { DBProvider } from "./contexts/firebaseContext";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { Notes } from "./pages/Notes";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/login" element={<SignIn />} />
               <Route path="/calendar" element={<Calender />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
+              <Route path="/notes" element={<Notes />} />
             </Routes>
           </BrowserRouter>
       </DBProvider>
